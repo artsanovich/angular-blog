@@ -1,0 +1,10 @@
+<div class="header" [class.dark-theme]="themeToggleService.themeToggle">
+<nav class="navbar main" [class.dark-theme]="themeToggleService.themeToggle">
+  <h1>Angular Blog</h1>
+  <app-theme></app-theme>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+</div>

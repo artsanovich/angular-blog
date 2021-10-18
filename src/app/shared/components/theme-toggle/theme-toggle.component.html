@@ -1,0 +1,21 @@
+<div class="main-wrapper">
+<div
+  class="checkbox-wrapper"
+  [ngStyle]="{backgroundColor: themeToggleService.themeToggle ? '#ffffff' : '#333333'}"
+>
+  <input
+    type="checkbox"
+    class="checkbox" id="checkbox"
+    [attr.checked]="themeToggleService.themeToggle"
+  >
+  <label
+    class="checkbox-label"
+    for="checkbox"
+    (click)="themeToggleService.switchTheme()"
+    [ngStyle]="{
+    backgroundColor: themeToggleService.themeToggle ? '#333333' : '#ffffff',
+    left: themeToggleService.themeToggle? '22px' : '5px'
+    }"
+  ></label>
+</div>
+</div>
