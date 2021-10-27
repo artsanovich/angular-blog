@@ -1,0 +1,9 @@
+{
+  "BUTTONS": {
+    "OPEN": "Open",
+    "TO-MAIN": "To main"
+  },
+  "POST": {
+    "CONTENT-ERROR": "Post has not been translated yet"
+  }
+}

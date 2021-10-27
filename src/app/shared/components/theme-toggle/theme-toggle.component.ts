@@ -6,11 +6,9 @@ import {ThemeToggleService} from "../../theme-toggle.service";
   templateUrl: './theme-toggle.component.html',
   styleUrls: ['./theme-toggle.component.scss']
 })
-export class ThemeToggleComponent implements OnInit {
+export class ThemeToggleComponent {
 
   constructor(public themeToggleService: ThemeToggleService) { }
 
-  ngOnInit(): void {
-  }
 
 }

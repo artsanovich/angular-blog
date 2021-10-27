@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {HttpClientModule} from "@angular/common/http";
 import {QuillModule} from "ngx-quill";
+import { LangNavComponent } from './components/lang-nav/lang-nav.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import {QuillModule} from "ngx-quill";
     QuillModule
   ],
   declarations: []
+
 })
 
 export class SharedModule {

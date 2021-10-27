@@ -1,4 +1,6 @@
 import {Injectable} from "@angular/core";
+import {CookieService} from "ngx-cookie-service";
+
 
 @Injectable({
   providedIn: 'root'
@@ -6,15 +8,18 @@ import {Injectable} from "@angular/core";
 
 export class ThemeToggleService {
 
-  themeToggle!:boolean
+  themeToggle!: boolean
 
-  constructor() {
-    this.themeToggle = JSON.parse(localStorage.getItem("themeToggle")!)
+  constructor(private cookieService: CookieService) {
+    if (cookieService.check('themeToggle')) {
+      this.themeToggle = JSON.parse(cookieService.get('themeToggle'))
+    }
   }
 
   switchTheme() {
     this.themeToggle = !this.themeToggle
-    localStorage.setItem("themeToggle", JSON.stringify(this.themeToggle))
+    this.cookieService.set('themeToggle', JSON.stringify(this.themeToggle), {path: '/'});
   }
+
 
 }

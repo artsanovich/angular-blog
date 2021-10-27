@@ -11,24 +11,19 @@
   height: 26px;
   border-radius: 50px;
   background: #333333;
-  &:after {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 4px;
-    left: -25px;
-    content: '';
-    background-image: url('../../../../assets/icons/theme-toggle/sun.svg');
-  }
-  &:before {
-    position: absolute;
-    width: 21px;
-    height: 21px;
-    top: 3px;
-    right: -25px;
-    content: '';
-    background-image: url('../../../../assets/icons/theme-toggle/moon.svg');
-  }
+  cursor: pointer;
+}
+
+.moon-svg {
+  position: absolute;
+  top: 3px;
+  right: -25px;
+}
+
+.sun-svg {
+  position: absolute;
+  top: 4px;
+  left: -25px;
 }
 
 

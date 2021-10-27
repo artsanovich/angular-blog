@@ -1,0 +1,6 @@
+<div class="main-wrapper">
+  <select class="lang-select" id="lang-select" (change)="langNavService.changeLang($any($event.target).value)">
+    <option value="en" [selected]="langNavService.lang === 'en'">EN</option>
+    <option value="ua" [selected]="langNavService.lang === 'ua'">UA</option>
+  </select>
+</div>

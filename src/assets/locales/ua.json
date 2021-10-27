@@ -1,0 +1,9 @@
+{
+  "BUTTONS": {
+    "OPEN": "Розгорнути",
+    "TO-MAIN": "На головну"
+  },
+  "POST": {
+    "CONTENT-ERROR": "Post has not been translated yet"
+  }
+}

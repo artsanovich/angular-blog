@@ -5,6 +5,8 @@ import {Observable} from "rxjs";
 import {Post} from "../shared/interfaces";
 import {switchMap} from "rxjs/operators";
 import {ThemeToggleService} from "../shared/theme-toggle.service";
+import {LangNavService} from "../shared/lang-nav.service";
+import {LangNavComponent} from "../shared/components/lang-nav/lang-nav.component";
 
 
 @Component({
@@ -23,7 +25,8 @@ export class PostPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostsService,
-    public themeToggleService: ThemeToggleService
+    public themeToggleService: ThemeToggleService,
+    public langNavService: LangNavService
   ) { }
 
   ngOnInit(): void {
@@ -32,4 +35,5 @@ export class PostPageComponent implements OnInit {
         return this.postService.getById(params['id'])
       }))
   }
+
 }

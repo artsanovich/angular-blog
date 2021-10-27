@@ -20,6 +20,11 @@
     <quill-editor formControlName="text"></quill-editor>
   </div>
 
+  <div class="form-control">
+    <label>Translate Content</label>
+    <quill-editor formControlName="textUa"></quill-editor>
+  </div>
+
   <div
     class="form-control"
     [ngClass]="{invalid: form.get('author')!.touched && form.get('author')!.invalid}"
