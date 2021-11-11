@@ -23,7 +23,8 @@ export class CreatePageComponent implements OnInit {
     this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
       text: new FormControl(null, Validators.required),
-      textTranslate: new FormControl(null),
+      textUa: new FormControl(null),
+      picture: new FormControl(null),
       author: new FormControl(null, Validators.required)
     })
   }
@@ -37,6 +38,7 @@ export class CreatePageComponent implements OnInit {
       author: this.form.value.author,
       text: this.form.value.text,
       textUa: this.form.value.textUa,
+      picture: this.form.value.picture,
       date: new Date()
     }
       this.postService.create(post).subscribe(() => {

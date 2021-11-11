@@ -25,6 +25,11 @@
     <quill-editor formControlName="textUa"></quill-editor>
   </div>
 
+  <div class="form-control">
+    <label>Picture</label>
+    <quill-editor formControlName="picture"></quill-editor>
+  </div>
+
   <div
     class="form-control"
     [ngClass]="{invalid: form.get('author')!.touched && form.get('author')!.invalid}"

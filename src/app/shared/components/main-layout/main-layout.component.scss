@@ -3,3 +3,7 @@
   position: relative;
   height: 62px;
 }
+
+.container{
+  min-height: calc(100vh - 78px);
+}

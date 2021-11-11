@@ -13,11 +13,32 @@ export interface Post {
   id?: string
   title: string
   text: string
-  textUa?: string
+  textUa: string
+  picture: string
   author: string
   date: Date
 }
 
-export interface FbCreateResponse {
-  name: string
+export interface LikePost {
+  id?: string
+  idPost: Post['id']
+  like: boolean
+}
+
+export interface Comment {
+  id?: string
+  idPost: Post['id']
+  authorName: string
+  reaction: string
+  commentContent: string
+  date?: Date
+  editedDate?: Date
+}
+
+export interface Reply {
+  id?: string
+  idComment: Comment['id']
+  authorName: string
+  replyContent: string
+  date: Date
 }

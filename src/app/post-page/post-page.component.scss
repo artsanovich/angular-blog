@@ -1,5 +1,5 @@
 .post {
- 
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -14,6 +14,33 @@
     strong {
       margin-right: 1rem;
     }
+  }
+}
+
+.post-content {
+  display: flex;
+}
+
+.post-picture {
+  max-width: 500px;
+  width: 100%;
+}
+
+.post-text {
+  max-width: 500px;
+}
+.post-commends {
+  &__header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &__title{
+    margin-right: 20px;
+  }
+  &__btn {
+    padding: 0 0.7rem;
+    font-size: 28px;
+    line-height: 0px;
   }
 }
 

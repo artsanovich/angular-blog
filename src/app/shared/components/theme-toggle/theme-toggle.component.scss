@@ -10,7 +10,6 @@
   width: 46px;
   height: 26px;
   border-radius: 50px;
-  background: #333333;
   cursor: pointer;
 }
 
@@ -34,15 +33,19 @@
 .checkbox-label {
   position: absolute;
   top: 4px;
-  left: 5px;
+  left: 6px;
   display: block;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ffffff;
   z-index: 1;
   transition: all 0.3s ease;
   cursor: pointer;
+  &.active {
+    background-color: #333333;
+    left: 22px;
+  }
 }
 
 

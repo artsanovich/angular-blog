@@ -16,7 +16,11 @@
     <small>{{post.date | date: 'medium': '': 'ua'  }}</small>
     </ng-template>
   </div>
-  <div>
+  <div class="post-content">
+    <div class="post-picture">
+      <quill-view-html [content]="post.picture" *ngIf="post.picture"></quill-view-html>
+    </div>
+    <div class="post-text">
       <quill-view-html [content]="post.text" *ngIf="langNavService.lang === 'en'; else contentUa"></quill-view-html>
 
     <ng-template #contentUa>
@@ -28,9 +32,31 @@
   </div>
 </div>
 </div>
+  <div class="post-commends">
+    <div class="post-commends__header">
+    <h2 class="post-commends__title">Comments: </h2>
+    <button
+      class="btn btn-dark post-commends__btn"
+      [class.dark-theme-btn]="themeToggleService.themeToggle"
+      (click)="openModal()"
+    >+</button>
+    </div>
+  </div>
+  <div>
+  <ng-container
+  *ngFor="let comment of commentsService.comments"
+  >
+    <app-comment
+      *ngIf="comment.idPost === currentRoute"
+      [comment]="comment"
+    ></app-comment>
+  </ng-container>
+  </div>
+</div>
 
 <ng-template #loading>
   <p class="text-center">Loading post...</p>
 </ng-template>
+
 
 

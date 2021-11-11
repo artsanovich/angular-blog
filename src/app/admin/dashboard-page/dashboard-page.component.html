@@ -3,10 +3,11 @@
   <input type="text" placeholder="Search post..." [(ngModel)]="searchStr">
 </div>
 
-<table>
+  <h1>Posts Table</h1>
+<table class="post-table">
   <thead>
   <tr>
-    <th>#</th>
+    <th>Total: {{posts?.length || 0}}</th>
     <th>Author</th>
     <th>Name</th>
     <th>Date</th>
@@ -34,3 +35,26 @@
 <ng-template #loading>
   <p class="text-center">Loading...</p>
 </ng-template>
+
+<h1>Likes Table</h1>
+
+<table class="likes-table">
+  <thead>
+  <tr>
+    <th>Total: {{likePosts?.length || 0}}</th>
+    <th>Author of Post</th>
+    <th>Name of Post</th>
+    <th>Date of post creation</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let post of posts">
+  <tr *ngFor="let likePost of likePosts; let idx = index" class="likes-group">
+    <ng-container *ngIf="likePost.idPost === post.id">
+      <td> {{idx + 1}}</td>
+      <td class="likes-group__item">{{post.author}}</td>
+      <td class="likes-group__item">{{post.title}}</td>
+      <td class="likes-group__item">{{post.date | date}}</td>
+    </ng-container>
+  </tr>
+  </tbody>
+</table>
