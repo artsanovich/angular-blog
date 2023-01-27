@@ -1,0 +1,16 @@
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 11px;
+  right: 100px;
+}
+
+.lang-wrapper {
+  margin-right: 10px;
+}
+
+.admin-button {
+  background: var(--primary-color);
+    color: #fff;
+}

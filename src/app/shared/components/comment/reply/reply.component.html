@@ -1,0 +1,16 @@
+<div class="reply">
+  <div class="reply__header">
+    <h3 class="reply__author">{{reply.authorName}}</h3>
+    <div class="reply__date">
+      <small class="reply__date">{{reply.date | date: 'medium'}}</small>
+    </div>
+    <p class="reply__content-text">{{reply.replyContent}}</p>
+  </div>
+  <div class="reply__button">
+    <button
+      class="btn btn-danger reply__btn"
+      (click)="remove(reply.id!)"
+    >Delete
+    </button>
+  </div>
+</div>

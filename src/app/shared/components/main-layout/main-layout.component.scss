@@ -1,0 +1,28 @@
+
+.navbar {
+  position: relative;
+  height: 62px;
+}
+
+.container{
+  min-height: calc(100vh - 78px);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-color);
+  transition: color 0.2s ease-in;
+
+  &:hover {
+    color: #666;
+  }
+
+  &.dark-theme {
+    color: #fff;
+
+    &:hover {
+      color: #666;
+    }
+  }
+}

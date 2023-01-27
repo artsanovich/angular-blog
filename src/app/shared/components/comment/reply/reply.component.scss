@@ -1,0 +1,21 @@
+.reply {
+  max-width: 900px;
+  margin: 0 0 10px auto;
+  padding: 12px 15px;
+  border: #ccc 1px dotted;
+
+  &__author {
+    max-width: 550px;
+    height: 30px;
+    overflow: hidden;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    margin-right: 0;
+  }
+}

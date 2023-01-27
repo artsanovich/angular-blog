@@ -1,0 +1,12 @@
+<div class="header" [class.dark-theme]="themeToggleService.themeToggle">
+<nav class="navbar main" [class.dark-theme]="themeToggleService.themeToggle">
+  <a routerLink="/" class="logo" [class.dark-theme]="themeToggleService.themeToggle">Angular Blog</a>
+  
+  <app-theme></app-theme>
+  <app-lang-nav></app-lang-nav>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+</div>

@@ -1,0 +1,54 @@
+.post {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  h1 {
+    margin-bottom: .5rem;
+  }
+
+  .info {
+    strong {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.post-content {
+  display: flex;
+}
+
+.post-picture {
+  max-width: 500px;
+  width: 100%;
+}
+
+.post-text {
+  max-width: 500px;
+}
+
+.post-commends {
+  margin-bottom: 100px;
+
+  &__header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-right: 20px;
+  }
+
+  &__btn {
+    padding: 0 0.7rem;
+    font-size: 28px;
+    line-height: 0px;
+  }
+}
+
+
+
+

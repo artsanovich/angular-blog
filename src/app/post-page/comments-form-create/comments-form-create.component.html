@@ -1,0 +1,45 @@
+
+<div class="form" color="primary">
+<p class="form__title">{{'FORM-CREATE.TITLE' | translate}}</p>
+  <form class="form__content" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="fill" floatLabel="never">
+    <mat-label color="primary">{{'FORM-CREATE.NAME' | translate}}</mat-label>
+    <input matInput formControlName="name">
+    <mat-error *ngIf="form.get('name')!.invalid && form.get('name')!.touched">
+      <p *ngIf="form.get('name')!.errors!.required">{{'FORM-ERRORS.NAME' | translate}}</p>
+      <p *ngIf="form.get('name')!.errors!.pattern">{{'FORM-ERRORS.NAME-GAPS' | translate}}</p>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'FORM-CREATE.SELECT' | translate}}</mat-label>
+    <mat-select color="primary" formControlName="reaction" [(ngModel)]="selected">
+      <mat-option value="positive">{{'FORM-CREATE.OPTION-1' | translate}}</mat-option>
+      <mat-option value="negative">{{'FORM-CREATE.OPTION-2' | translate}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('reaction')!.invalid && form.get('reaction')!.touched">
+      {{'FORM-ERRORS.REACTION' | translate}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{'FORM-CREATE.COMMENT' | translate}}</mat-label>
+    <textarea matInput formControlName="comment"></textarea>
+    <mat-error *ngIf="form.get('comment')!.invalid && form.get('comment')!.touched">
+      <p *ngIf="form.get('comment')!.errors!.required">{{'FORM-ERRORS.COMMENT' | translate}}</p>
+      <p *ngIf="form.get('comment')!.errors!.minlength ">
+        {{('FORM-ERRORS.LENGTH' | translate)}} {{(form.get('comment')!.errors!.minlength.requiredLength)}},
+        {{('FORM-ERRORS.BUT-NOW' | translate)}} {{(form.get('comment')!.errors!.minlength.actualLength)}}
+      </p>
+      <p *ngIf="form.get('comment')!.errors!.pattern">{{'FORM-ERRORS.COMMENT-GAPS' | translate}}</p>
+    </mat-error>
+  </mat-form-field>
+    <div class="form__btns">
+      <button
+        mat-button
+        [color]="themeToggleService.themeToggle ? 'primary' : 'accent'"
+        [disabled]="form.invalid"
+        type="submit"
+      >{{'FORM-CREATE.SEND' | translate}}</button>
+      <button mat-button color="warn" type="button" (click)="close()">{{'FORM-CREATE.CANCEL' | translate}}</button>
+    </div>
+  </form>
+</div>

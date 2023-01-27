@@ -1,0 +1,63 @@
+{
+  "BUTTONS": {
+    "OPEN": "Open",
+    "TO-MAIN": "To main",
+    "DELETE": "Delete",
+    "REPLY": "Reply",
+    "EDIT": "Edit",
+    "SHOW-REPLIES": "Show Replies",
+    "HIDE-REPLIES": "Hide Replies",
+    "MORE": "...more",
+    "LESS": "..less"
+  },
+  "POST": {
+    "CONTENT-ERROR": "Post has not been translated yet",
+    "COMMENTS": "Comments:",
+    "NO-COMMENTS": "No comments yet",
+    "EDITED-DATE": "edited:"
+  },
+  "FORM-CREATE": {
+    "TITLE": "Your Comment",
+    "NAME": "Name",
+    "SELECT": "Your reaction",
+    "OPTION-1": "Positive",
+    "OPTION-2": "Negative",
+    "COMMENT": "Comment",
+    "SEND": "Send",
+    "CANCEL": "Cancel"
+  },
+  "FORM-EDIT": {
+    "TITLE": "Edit Your Comment",
+    "NAME": "Name",
+    "SELECT": "Your reaction",
+    "OPTION-1": "Positive",
+    "OPTION-2": "Negative",
+    "COMMENT": "Comment",
+    "EDIT": "EDIT",
+    "CANCEL": "Cancel"
+  },
+  "FORM-REPLY": {
+    "TITLE": "Your Reply",
+    "NAME": "Name",
+    "REPLY": "Reply",
+    "REPLY-BTN": "Reply",
+    "CANCEL": "Cancel"
+  },
+  "FORM-ERRORS": {
+    "NAME": "Input your name",
+    "NAME-GAPS": "The name cannot consist only of gaps",
+    "REACTION": "Choose your reaction",
+    "COMMENT": "Input your comment",
+    "COMMENT-GAPS": "The comment cannot consist only of gaps",
+    "LENGTH": "Length cannot be less ",
+    "BUT-NOW": "but now"
+  },
+  "REPLY-FORM-ERRORS": {
+  "NAME": "Input your name",
+  "NAME-GAPS": "The name cannot consist only of gaps",
+  "REPLY": "Input your reply",
+  "REPLY-GAPS": "The reply cannot consist only of gaps",
+  "LENGTH": "Length cannot be less ",
+  "BUT-NOW": "but now"
+ }
+}

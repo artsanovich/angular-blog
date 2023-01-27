@@ -1,0 +1,67 @@
+<div *ngIf="post$ | async as post; else loading">
+  <div class="post">
+    <div class="header">
+      <h1>{{post.title}}</h1>
+      <button
+        class="btn btn-dark"
+        routerLink="/"
+        [class.dark-theme-btn]="themeToggleService.themeToggle"
+      >{{'BUTTONS.TO-MAIN' | translate}}</button>
+    </div>
+    <div class="info">
+      <strong>{{post.author}}</strong>
+      <small *ngIf="langNavService.lang === 'en'; else dateUa;">{{post.date | date: 'medium' }}</small>
+
+      <ng-template #dateUa>
+        <small>{{post.date | date: 'medium': '': 'ua'  }}</small>
+      </ng-template>
+    </div>
+    <div class="post-content">
+      <div class="post-picture">
+        <quill-view-html [content]="post.picture" *ngIf="post.picture"></quill-view-html>
+      </div>
+      <div class="post-text">
+        <quill-view-html [content]="post.text" *ngIf="langNavService.lang === 'en'; else contentUa"></quill-view-html>
+
+        <ng-template #contentUa>
+          <quill-view-html [content]="post.textUa!" *ngIf="post.textUa!; else contentError"></quill-view-html>
+          <ng-template #contentError>
+            <p class="text-center" *ngIf="!post.textUa!">{{'POST.CONTENT-ERROR' | translate}}</p>
+          </ng-template>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="post-commends">
+    <div class="post-commends__header">
+      <h2 class="post-commends__title">{{'POST.COMMENTS' | translate}} </h2>
+      <button
+        class="btn btn-dark post-commends__btn"
+        [class.dark-theme-btn]="themeToggleService.themeToggle"
+        (click)="openModal()"
+      >+
+      </button>
+    </div>
+    <div>
+      <ng-container *ngIf="commentsService.comments.length; else noComments">
+        <ng-container
+          *ngFor="let comment of commentsService.comments"
+        >
+          <app-comment
+            *ngIf="comment.idPost === currentRoute"
+            [comment]="comment"
+          ></app-comment>
+        </ng-container>
+      </ng-container>
+      <ng-template #noComments>
+        <strong>{{"POST.NO-COMMENTS" | translate}}</strong>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <p class="text-center">Loading post...</p>
+</ng-template>
+
+
+

@@ -1,0 +1,52 @@
+
+.main-wrapper {
+  position: absolute;
+  top: 17px;
+  left: 100px;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.moon-svg {
+  position: absolute;
+  top: 3px;
+  right: -25px;
+}
+
+.sun-svg {
+  position: absolute;
+  top: 4px;
+  left: -25px;
+}
+
+
+.checkbox {
+  visibility: hidden;
+}
+
+.checkbox-label {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  z-index: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &.active {
+    background-color: #333333;
+    left: 22px;
+  }
+}
+
+
+

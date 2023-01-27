@@ -1,0 +1,64 @@
+.comment {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: #ccc 1px dotted;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__author {
+    max-width: 650px;
+    height: 30px;
+    overflow: hidden;
+  }
+
+  &__reaction {
+    max-height: 30px;
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+
+    &-edited {
+      font-size: 10px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 5px;
+
+    &-text {
+      overflow-wrap: break-word;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__btn {
+    margin-right: 0;
+
+    &-edit {
+      margin-right: 10px;
+      background-color: #919191;
+    }
+  }
+}
+
+.comment__show-btn {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffa245;
+
+  &-text {
+    font-size: inherit;
+  }
+}

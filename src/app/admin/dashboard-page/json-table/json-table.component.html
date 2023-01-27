@@ -1,0 +1,117 @@
+<h1>Json Sorting Table</h1>
+
+<table class="json-table">
+  <thead>
+  <tr>
+    <th>Birth Date
+        <button *ngIf="dateSortStatus === null" class="btn sort-btn" (click)="sortByDate('firstSort')">
+          <svg class="sort-icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100"
+               height="20px" width="20px" x="0px" y="0px">
+            <path
+              d="M74.32,42.43H25.68c-4.37,0-6.56-6.12-3.47-9.69L46.55,4.61a4.43,4.43,0,0,1,6.93,0L77.79,32.74C80.88,36.31,78.69,42.43,74.32,42.43Zm0,15.13c4.37,0,6.56,6.12,3.47,9.69L53.47,95.39a4.43,4.43,0,0,1-6.93,0L22.21,67.26c-3.09-3.57-.9-9.69,3.47-9.69Z"/>
+          </svg>
+        </button>
+      <ng-container *ngIf="dateSortStatus || dateSortStatus === false">
+        <button *ngIf="dateSortStatus" class="btn sort-btn" (click)="sortByDate('secondSort')">
+          <svg class="sort-icon sort-icon--downarrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+               x="0px" y="0px">
+            <path
+              d="M88.83,22.75a7.84,7.84,0,0,1,5.55,13.38L55.55,75a7.81,7.81,0,0,1-11.06,0L5.63,36.13a7.84,7.84,0,0,1,5.55-13.38Z"/>
+          </svg>
+        </button>
+        <button *ngIf="!dateSortStatus" class="btn sort-btn" (click)="sortByDate('repeat')">
+          <svg  class="sort-icon sort-icon--uparrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+                x="0px" y="0px">
+            <path
+              d="M11.18,77.25A7.84,7.84,0,0,1,5.64,63.87L44.46,25.05a7.79,7.79,0,0,1,11.06,0L94.34,63.87a7.82,7.82,0,0,1-5.51,13.38Z"/>
+          </svg>
+        </button>
+      </ng-container>
+    </th>
+    <th>Name
+      <button *ngIf="nameSortStatus === null" class="btn sort-btn" (click)="sortByName('firstSort')">
+        <svg class="sort-icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100"
+             height="20px" width="20px" x="0px" y="0px">
+          <path
+            d="M74.32,42.43H25.68c-4.37,0-6.56-6.12-3.47-9.69L46.55,4.61a4.43,4.43,0,0,1,6.93,0L77.79,32.74C80.88,36.31,78.69,42.43,74.32,42.43Zm0,15.13c4.37,0,6.56,6.12,3.47,9.69L53.47,95.39a4.43,4.43,0,0,1-6.93,0L22.21,67.26c-3.09-3.57-.9-9.69,3.47-9.69Z"/>
+        </svg>
+      </button>
+      <ng-container *ngIf="nameSortStatus || nameSortStatus === false">
+        <button *ngIf="nameSortStatus" class="btn sort-btn" (click)="sortByName('secondSort')">
+          <svg class="sort-icon sort-icon--downarrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+               x="0px" y="0px">
+            <path
+              d="M88.83,22.75a7.84,7.84,0,0,1,5.55,13.38L55.55,75a7.81,7.81,0,0,1-11.06,0L5.63,36.13a7.84,7.84,0,0,1,5.55-13.38Z"/>
+          </svg>
+        </button>
+          <button *ngIf="!nameSortStatus" class="btn sort-btn" (click)="sortByName('repeat')">
+          <svg  class="sort-icon sort-icon--uparrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+               x="0px" y="0px">
+            <path
+              d="M11.18,77.25A7.84,7.84,0,0,1,5.64,63.87L44.46,25.05a7.79,7.79,0,0,1,11.06,0L94.34,63.87a7.82,7.82,0,0,1-5.51,13.38Z"/>
+          </svg>
+          </button>
+      </ng-container>
+    </th>
+    <th>Age
+      <button *ngIf="ageSortStatus === null" class="btn sort-btn" (click)="sortByAge('firstSort')">
+        <svg class="sort-icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100"
+             height="20px" width="20px" x="0px" y="0px">
+          <path
+            d="M74.32,42.43H25.68c-4.37,0-6.56-6.12-3.47-9.69L46.55,4.61a4.43,4.43,0,0,1,6.93,0L77.79,32.74C80.88,36.31,78.69,42.43,74.32,42.43Zm0,15.13c4.37,0,6.56,6.12,3.47,9.69L53.47,95.39a4.43,4.43,0,0,1-6.93,0L22.21,67.26c-3.09-3.57-.9-9.69,3.47-9.69Z"/>
+        </svg>
+      </button>
+      <ng-container *ngIf="ageSortStatus || ageSortStatus === false">
+        <button *ngIf="ageSortStatus" class="btn sort-btn" (click)="sortByAge('secondSort')">
+          <svg class="sort-icon sort-icon--downarrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+               x="0px" y="0px">
+            <path
+              d="M88.83,22.75a7.84,7.84,0,0,1,5.55,13.38L55.55,75a7.81,7.81,0,0,1-11.06,0L5.63,36.13a7.84,7.84,0,0,1,5.55-13.38Z"/>
+          </svg>
+        </button>
+        <button *ngIf="!ageSortStatus" class="btn sort-btn" (click)="sortByAge('repeat')">
+          <svg  class="sort-icon sort-icon--uparrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+                x="0px" y="0px">
+            <path
+              d="M11.18,77.25A7.84,7.84,0,0,1,5.64,63.87L44.46,25.05a7.79,7.79,0,0,1,11.06,0L94.34,63.87a7.82,7.82,0,0,1-5.51,13.38Z"/>
+          </svg>
+        </button>
+      </ng-container>
+    </th>
+    <th>Location
+      <button *ngIf="locationSortStatus === null" class="btn sort-btn" (click)="sortByLocation('firstSort')">
+        <svg class="sort-icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100"
+             height="20px" width="20px" x="0px" y="0px">
+          <path
+            d="M74.32,42.43H25.68c-4.37,0-6.56-6.12-3.47-9.69L46.55,4.61a4.43,4.43,0,0,1,6.93,0L77.79,32.74C80.88,36.31,78.69,42.43,74.32,42.43Zm0,15.13c4.37,0,6.56,6.12,3.47,9.69L53.47,95.39a4.43,4.43,0,0,1-6.93,0L22.21,67.26c-3.09-3.57-.9-9.69,3.47-9.69Z"/>
+        </svg>
+      </button>
+      <ng-container *ngIf="locationSortStatus || locationSortStatus === false">
+        <button *ngIf="locationSortStatus" class="btn sort-btn" (click)="sortByLocation('secondSort')">
+          <svg class="sort-icon sort-icon--downarrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+               x="0px" y="0px">
+            <path
+              d="M88.83,22.75a7.84,7.84,0,0,1,5.55,13.38L55.55,75a7.81,7.81,0,0,1-11.06,0L5.63,36.13a7.84,7.84,0,0,1,5.55-13.38Z"/>
+          </svg>
+        </button>
+        <button *ngIf="!locationSortStatus" class="btn sort-btn" (click)="sortByLocation('repeat')">
+          <svg  class="sort-icon sort-icon--uparrow" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" height="15px" width="15px"
+                x="0px" y="0px">
+            <path
+              d="M11.18,77.25A7.84,7.84,0,0,1,5.64,63.87L44.46,25.05a7.79,7.79,0,0,1,11.06,0L94.34,63.87a7.82,7.82,0,0,1-5.51,13.38Z"/>
+          </svg>
+        </button>
+      </ng-container>
+    </th>
+  </tr>
+
+  </thead>
+  <tbody>
+  <tr class="json-group" *ngFor="let person of jsonTableService.jPersons">
+    <td class="json-group__item">{{person.birthDate * 1000 | date}}</td>
+    <td class="json-group__item">{{person.name}}</td>
+    <td class="likes-group__item">{{person.age}}</td>
+    <td class="likes-group__item">{{person.location}}</td>
+  </tr>
+  </tbody>
+</table>
